@@ -54,14 +54,12 @@ $message
  ************************** CAUTION **************************
  * This is 'JSON version 2' and there are many differences   *
  * to version 1.xx                                           *
- * Please check your applications useing old version.        *
+ * Please check your applications using old version.         *
  *   See to 'INCOMPATIBLE CHANGES TO OLD VERSION' and 'TIPS' *
  *************************************************************
 
 
 EOF
-
-sleep 2;
 
 my @prereq_pm;
 
@@ -81,6 +79,7 @@ WriteMakefile(
     'VERSION_FROM'  => 'lib/JSON.pm', # finds $VERSION
     'PREREQ_PM'     => {
               'Test::More'  => 0,
+              'JSON::PP'    => '2.30',
               @prereq_pm,
     },
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
